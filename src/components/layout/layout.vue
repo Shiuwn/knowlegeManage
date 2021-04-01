@@ -1,11 +1,10 @@
 <template>
     <el-container>
         <el-header height="80px">
-            header
+            <Header/>
         </el-header>
         <el-container>
         <el-aside width="300px">
-            aside
         </el-aside>
         <el-main>
             main
@@ -16,8 +15,9 @@
 </template>
 
 <script>
-
+import Header from './header.vue'
 export default {
+    components:{Header},
     data(){
         return {
             hello:'hello world'
@@ -26,8 +26,12 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
     .el-container{
         display:flex;
     }
+    .el-header{
+        background:var(--secondary-color);
+    }
+    
 </style>
