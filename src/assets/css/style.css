@@ -1,0 +1,11 @@
+:root{
+    --primary-color:rgb(255,245,247);
+    --secondary-color:rgb(178,200,187);
+    --third-color:rgb(69,137,148);
+    --fourth-color:rgb(117,121,74);
+    --fifth-color:rgb(114,83,52);
+}
+body{
+    margin:0;
+    background-color: var(--primary-color);
+}
