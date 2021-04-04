@@ -36,4 +36,7 @@ export default {
     font-size:18px;
     padding-left:30px;
   }
+  .el-row,.el-col{
+    height:100%;
+  }
 </style>
