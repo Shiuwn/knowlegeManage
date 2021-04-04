@@ -9,3 +9,6 @@ body{
     margin:0;
     background-color: var(--primary-color);
 }
+.icon{
+    margin-right:5px;
+}
