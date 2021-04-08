@@ -8,7 +8,7 @@
             <Sidebar/>
         </el-aside>
         <el-main class="km-main">
-            main
+            <router-view></router-view>
         </el-main>
         </el-container>
 

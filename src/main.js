@@ -5,9 +5,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/css/style.css'
 import './assets/css/font-awesome.min.css'
 import store from './store'
+import router from './route'
 useElement();
 Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
-  store
+  store,
+  router
 }).$mount('#app')

@@ -36,7 +36,7 @@ export default {
     font-size:18px;
     padding-left:30px;
   }
-  .el-row,.el-col{
+  .el-row,.el-col,.el-menu{
     height:100%;
   }
 </style>
