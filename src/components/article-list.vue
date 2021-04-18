@@ -1,7 +1,7 @@
 <template>
   <ul class="article-list">
      <li v-for="(item) in articleList" :key="item.id">
-       <h3 class="article-title">{{item.title}}</h3>
+       <h3 :title="item.title" class="article-title">{{item.title}}</h3>
        <div class="content-wrapper">
          <div class="content-container">
           <img :src="item.image" v-if="item.image">
@@ -46,6 +46,7 @@ export default {
       .article-title{
         margin:0;
         margin-bottom:10px;
+        overflow:hidden;
       }
       .content-wrapper{
         .content-container{
