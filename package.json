@@ -6,15 +6,16 @@
     "name": "shiu"
   },
   "scripts": {
-    "serve": "node_modules/@vue/cli-service/bin/vue-cli-service.js serve --open",
-    "build": "node_modules/@vue/cli-service/bin/vue-cli-service.js build",
-    "lint": "node_modules/@vue/cli-service/bin/vue-cli-service.js lint"
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "main": "index.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.15.1",
     "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
