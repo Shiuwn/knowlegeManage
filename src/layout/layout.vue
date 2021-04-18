@@ -42,7 +42,7 @@ export default {
         top:0;
     }    
     .km-container{
-        padding-top:80px;
+        padding-top:60px;
     }
     .km-aside{
         position:fixed;
