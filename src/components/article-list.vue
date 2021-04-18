@@ -1,6 +1,6 @@
 <template>
   <ul class="article-list">
-     <li v-for="(item) in articleList" :key="item.id">
+     <li :data-id="item.id" v-for="(item) in articleList" :key="item.id">
        <h3 :title="item.title" class="article-title">{{item.title}}</h3>
        <div class="content-wrapper">
          <div class="content-container">
@@ -42,6 +42,7 @@ export default {
     margin:0;
     li{
       overflow:hidden;
+      cursor:pointer;
       border-bottom:1px dashed #ddd;
       .article-title{
         margin:0;
