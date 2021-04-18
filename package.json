@@ -12,7 +12,9 @@
   },
   "main": "index.js",
   "dependencies": {
-    "core-js": "^3.6.5",
+    "@ckeditor/ckeditor5-build-classic": "^27.0.0",
+    "@ckeditor/ckeditor5-vue2": "^1.0.5",
+    "core-js": "^3.10.1",
     "element-ui": "^2.15.1",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",
