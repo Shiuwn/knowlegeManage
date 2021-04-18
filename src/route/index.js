@@ -4,8 +4,12 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes:[
     {
-      path:'/article',
-      components:import('../components/article')
+      path:'/',
+      component:()=>import('../components/article-list')
+    },
+    {
+      path:'/article/:id',
+      component:()=>import('../components/article')
     }
   ]
 });

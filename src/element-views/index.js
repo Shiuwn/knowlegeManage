@@ -10,6 +10,7 @@ import {  Container,
   MenuItem,
   MenuItemGroup,
   Row,
+  Tag,
   Col,} from 'element-ui';
 
 export default ()=>{
@@ -25,7 +26,8 @@ export default ()=>{
        Menu,
        MenuItem,
        MenuItemGroup,
-       Submenu
+       Submenu,
+       Tag
    ].forEach((C)=>{Vue.use(C)});
     
 }
