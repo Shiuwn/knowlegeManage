@@ -1,7 +1,7 @@
 <template>
     <nav>
         <div class="logo">
-            <img src="../../assets/img/logo.svg" alt=""/>
+            <img src="../assets/img/logo.svg" alt=""/>
             <span class="title">SHIUWIKI</span>
         </div>
     </nav>

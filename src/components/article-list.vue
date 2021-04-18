@@ -25,7 +25,7 @@ export default {
           id:123,
           title:'我是标题',
           description:'我是内容我我是内容我我是内容我我是内容我我是内容我我是内容我我是内容我我是内容我我是内容我我是内容我我是内容我我是内容我我是内容我我是内容',
-          image:'../assets/logo.png',
+          image:require('../assets/logo.png'),
           tags:['标签1','标签2']
         }
       ]
