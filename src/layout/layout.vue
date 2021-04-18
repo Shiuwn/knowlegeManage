@@ -1,6 +1,6 @@
 <template>
     <el-container  class="km-container">
-        <el-header height="80px" class="km-header">
+        <el-header height="60px" class="km-header">
             <Header/>
         </el-header>
         <el-container>
@@ -47,7 +47,7 @@ export default {
     .km-aside{
         position:fixed;
         left:0;
-        top:80px;
+        top:60px;
         bottom:0;
     }
     .km-main{
