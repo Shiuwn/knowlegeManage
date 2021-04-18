@@ -10,6 +10,10 @@ const router = new VueRouter({
     {
       path:'/article/:id',
       component:()=>import('../components/article')
+    },
+    {
+      path:'/edit/:id',
+      component:()=>import('../components/edit')
     }
   ]
 });

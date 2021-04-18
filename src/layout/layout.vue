@@ -40,6 +40,7 @@ export default {
         right:0;
         left:0;
         top:0;
+        z-index:1;
     }    
     .km-container{
         padding-top:60px;
