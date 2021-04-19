@@ -13,6 +13,8 @@ import {  Container,
   Tag,
   Input,
   Button,
+  Select,
+  Option,
   Col,} from 'element-ui';
 
 export default ()=>{
@@ -31,7 +33,9 @@ export default ()=>{
        Submenu,
        Tag,
        Input,
-       Button
+       Button,
+       Select,
+       Option
    ].forEach((C)=>{Vue.use(C)});
     
 }

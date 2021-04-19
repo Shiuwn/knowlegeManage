@@ -1,20 +1,28 @@
 <template>
  <div class="edit-wrapper">
    <div class="edit-input-wrapper">
-     <el-input v-model="title" placeholder="请输入标题"></el-input>
+     <el-input v-model="article.title" placeholder="请输入标题"></el-input>
    </div>
    <div class="edit-input-wrapper">
-    <ckeditor :editor="editor" v-model="editorData" ></ckeditor>
+    <ckeditor :editor="editor" v-model="article.content" ></ckeditor>
    </div>
    <div class="edit-input-wrapper">
      <el-input type="textarea" :autosize="{minRows:2,maxRows:4}"
       placeholder="请输入概述"
-      v-model="description"
+      v-model="article.description"
      >
      </el-input>
    </div>
    <div class="edit-input-wrapper">
-     <el-button type="primary">保存</el-button>
+     <el-select placeholder="请选择分类" v-model="article.category">
+      <el-option v-for="(item) in category" :key="item.id" :label="item.name" :value="item.id"></el-option>
+    </el-select>
+   </div>
+   <div class="edit-input-wrapper">
+
+   </div>
+   <div class="edit-input-wrapper">
+     <el-button type="primary" @click="save">保存</el-button>
      <el-button>取消</el-button>
    </div>
  </div> 
@@ -30,8 +38,31 @@ export default {
       editor:ClassicEditor,
       editorData:'<p>这是可编辑的内容</p>',
       editorConfig:{},
-      description:'',
-      title:'我是标题'
+      article:{
+        title:'我是标题',
+        content:'<p>这是可编辑的内容</p>',
+        category:1,
+        description:'我是描述',
+        tags:[{
+          name:'标签1',
+          id:1
+        }]
+      },
+      category:[{
+        name:'HTML',
+        id:1,
+      },{
+        name:'CSS',
+        id:2,
+      },{
+        name:'JavaScript',
+        id:3
+      }]
+    }
+  },
+  methods:{
+    save(){
+      console.log(this.article)
     }
   }
 }
@@ -41,8 +72,8 @@ export default {
     padding:0 20px;
     z-index:1;
   }
-  .edit-input-wrapper{
-    margin-bottom:20px;
+  .edit-input-wrapper+.edit-input-wrapper{
+    margin-top:20px;
   }
   /deep/.ck-content{
     min-height:600px;
