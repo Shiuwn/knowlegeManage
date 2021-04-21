@@ -1,3 +1,3 @@
-const ADDITEM = "ADD_ITEM"
-const EDITITEM = "EDIT_ITEM"
-export {ADDITEM,EDITITEM}
+const ADD_ITEM = "ADD_ITEM"
+const EDIT_ITEM = "EDIT_ITEM"
+export {ADD_ITEM,EDITITEM}
