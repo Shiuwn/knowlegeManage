@@ -81,4 +81,7 @@ export default {
   /deep/.ck.ck-dropdown .ck-dropdown__arrow{
     z-index:0;
   }
+  /deep/.ck.ck-sticky-panel .ck-sticky-panel__content.ck-sticky-panel__content_sticky{
+    top:60px;
+  }
 </style>
