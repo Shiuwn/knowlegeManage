@@ -1,3 +1,4 @@
-const ADD_ITEM = "ADD_ITEM"
-const EDIT_ITEM = "EDIT_ITEM"
-export {ADD_ITEM,EDITITEM}
+export const ADD_CATEGORY = "ADD_CATEGORY"
+export const GET_CATEGORY = "GET_CATEGORY"
+export const FETCH_CATEGORY = "FETCH_CATEGORY"
+export const EDIT_CATEGORY = "EDIT_CATEGORY"
