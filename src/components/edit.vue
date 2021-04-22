@@ -41,6 +41,7 @@ import CKEditor from '@ckeditor/ckeditor5-vue2';
 import MarkdownEditor from 'markdown-editor-vuejs';
 import '../assets/css/font.css';
 import 'markdown-editor-vuejs/src/markdown.css';
+import marked from 'marked';
 Vue.use( CKEditor );
 export default {
   data(){
@@ -75,8 +76,13 @@ export default {
   methods:{
     save(){
       console.log(this.article)
-    },
-    
+    }
+  },
+  watch:{
+    textType(val,oldVal){
+      if(val==oldVal) return
+      if(oldVal=='markdown') this.article.content = marked(this.article.content)
+    }
   }
 }
 </script>
