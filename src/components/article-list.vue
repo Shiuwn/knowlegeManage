@@ -54,6 +54,7 @@ export default {
         margin:0;
         margin-bottom:10px;
         overflow:hidden;
+        line-height:1.5;
       }
       .content-wrapper{
         .content-container{
