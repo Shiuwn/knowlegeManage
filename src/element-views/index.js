@@ -15,6 +15,8 @@ import {  Container,
   Button,
   Select,
   Option,
+  Tabs,
+  TabPane,
   Col,} from 'element-ui';
 
 export default ()=>{
@@ -35,7 +37,9 @@ export default ()=>{
        Input,
        Button,
        Select,
-       Option
+       Option,
+       Tabs,
+       TabPane,
    ].forEach((C)=>{Vue.use(C)});
     
 }

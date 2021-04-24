@@ -1,10 +1,17 @@
 <template>
  <div class="edit-wrapper">
    <div class="edit-input-wrapper">
+      <el-tabs v-model="textType" type="card">
+        <el-tab-pane label="富文本" name="richText"></el-tab-pane>
+        <el-tab-pane label="Markdown" name="markdown"></el-tab-pane>
+      </el-tabs>
+   </div>
+   <div class="edit-input-wrapper">
      <el-input v-model="article.title" placeholder="请输入标题"></el-input>
    </div>
    <div class="edit-input-wrapper">
-    <ckeditor :editor="editor" v-model="article.content" ></ckeditor>
+    <ckeditor :editor="editor" v-model="article.content" v-if="textType=='richText'"></ckeditor>
+    <markdown-editor v-model="article.content" v-else></markdown-editor>
    </div>
    <div class="edit-input-wrapper">
      <el-input type="textarea" :autosize="{minRows:2,maxRows:4}"
@@ -31,10 +38,15 @@
 import Vue from 'vue';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import CKEditor from '@ckeditor/ckeditor5-vue2';
+import MarkdownEditor from 'markdown-editor-vuejs';
+import '../assets/css/font.css';
+import 'markdown-editor-vuejs/src/markdown.css';
+import marked from 'marked';
 Vue.use( CKEditor );
 export default {
   data(){
     return {
+      textType:'richText',
       editor:ClassicEditor,
       editorData:'<p>这是可编辑的内容</p>',
       editorConfig:{},
@@ -60,9 +72,16 @@ export default {
       }]
     }
   },
+  components:{MarkdownEditor},
   methods:{
     save(){
       console.log(this.article)
+    }
+  },
+  watch:{
+    textType(val,oldVal){
+      if(val==oldVal) return
+      if(oldVal=='markdown') this.article.content = marked(this.article.content)
     }
   }
 }
@@ -80,5 +99,32 @@ export default {
   }
   /deep/.ck.ck-dropdown .ck-dropdown__arrow{
     z-index:0;
+  }
+  /deep/.ck.ck-sticky-panel .ck-sticky-panel__content.ck-sticky-panel__content_sticky{
+    top:60px;
+  }
+  /deep/.teal{
+    background:var(--secondary-color);
+    color:var(--third-color);
+  }
+  /deep/.el-tabs__header .el-tabs__nav{
+    z-index:0;
+  }
+
+  /deep/.el-tabs__header .el-tabs__nav   .el-tabs__item.is-active,
+  /deep/.el-tabs__item:hover{
+    color:var(--third-color);
+  }
+  /deep/.markdown textarea{
+    min-height:600px;
+  }
+  /deep/.el-button--primary,
+  /deep/.el-button--primary:focus{
+    background-color:var(--secondary-color);
+    color:var(--third-color);
+    border:none;
+  }
+  /deep/.el-button--primary:hover{
+    background:rgb(195,221,205);
   }
 </style>

@@ -7,19 +7,11 @@
       background-color="transparent"
       text-color="rgb(69,137,148)"
       active-text-color="rgb(69,137,148)">
-      
-        <el-menu-item>
-          <i class="fa fa-html5 icon"></i>
-          <span>HTML</span>
+        <el-menu-item v-for="(item) in categorys" :key="item.id">
+          <i :class="item.class||'fa fa-code icon'"></i>
+          <span>{{item.name}}</span>
         </el-menu-item>
-        <el-menu-item>
-          <i class="fa fa-css3 icon"></i>
-          <span>CSS</span>
-        </el-menu-item>
-        <el-menu-item>
-          <i class="fa fa-code icon"></i>
-          <span>JavaScript</span>
-        </el-menu-item>
+        
     </el-menu>
 
   </el-col>
@@ -28,7 +20,14 @@
 
 <script>
 export default {
-  
+  created(){
+    this.$store.dispatch('sidebar/FETCH_CATEGORY');
+  },
+  computed:{
+    categorys(){
+      return this.$store.state.sidebar.items
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
