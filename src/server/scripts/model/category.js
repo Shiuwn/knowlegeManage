@@ -7,7 +7,7 @@ var CategoryDB = {
       this.db.run(`
         CREATE TABLE IF NOT EXISTS category (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
-          name TEXT
+          name TEXT UNIQUE
         )
       `)
     }catch(e){
@@ -31,7 +31,15 @@ var CategoryDB = {
     })
   },
   run:function(sql,params){
-    this.db.run(sql,params)
+    return new Promise((resolve, reject)=>{
+      this.db.run(sql,params,(err)=>{
+        if(err){
+          reject(err)
+          return
+        }
+        resolve(null)
+      })
+    })
   }
 }
 module.exports = CategoryDB;
