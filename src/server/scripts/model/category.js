@@ -1,10 +1,9 @@
 const sqlite3 = require('sqlite3');
-const fs = require('fs');
-console.log(fs.existsSync('../../data/knowlege.db'))
+const path = require('path');
 var CategoryDB = {
   init:function(){
     try{
-      this.db = new sqlite3.Database('../../data/knowlege.db');
+      this.db = new sqlite3.Database(path.resolve(__dirname,'../../data/knowlege.db'));
       this.db.run(`
         CREATE TABLE IF NOT EXISTS category (
           id INTEGER PRIMARY KEY AUTOINCREMENT,

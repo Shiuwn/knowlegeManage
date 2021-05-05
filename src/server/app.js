@@ -1,13 +1,9 @@
 const express = require('express')
+const path = require('path')
 const app = express()
 // const CategoryDB = require('./scripts/model/category')
 const categoryController = require('./scripts/controller/category')
 
-try{
-  CategoryDB.init();
-}catch(e){
-  console.log(e)
-}
 //设置跨域访问
 app.all('*', (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -17,6 +13,7 @@ app.all('*', (req, res, next) => {
   res.header("Content-Type", "application/json;charset=utf-8");
   next();
 });
-app.use(express.static('../assets/'))
+app.use(express.static(path.resolve(__dirname,'../assets/')))
 app.get('/api/category',categoryController.getCategory);
-app.listen(3000);
+app.listen(3000)
+console.log('listening port 3000')
