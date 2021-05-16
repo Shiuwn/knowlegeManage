@@ -8,15 +8,18 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start:server": "node ./src/server/app.js"
   },
   "main": "index.js",
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^27.1.0",
     "@ckeditor/ckeditor5-vue2": "^1.0.5",
+    "body-parser": "^1.19.0",
     "core-js": "^3.10.1",
     "element-ui": "^2.15.1",
     "markdown-editor-vuejs": "^1.1.1",
+    "sqlite3": "^5.0.2",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
