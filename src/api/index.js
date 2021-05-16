@@ -21,4 +21,4 @@ let categoryData = [{
     class:'fa fa-code icon'
   }];
 export const getCategory = (param)=>fetch('/api/category',param,categoryData)
-
+export const addArticle = (param)=>fetch('/api/article',param)
