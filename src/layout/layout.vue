@@ -6,6 +6,8 @@
         <el-container>
         <el-aside width="200px" class="km-aside">
             <Sidebar/>
+        
+        <router-view name="create-category"></router-view>
         </el-aside>
         <el-main class="km-main">
             <router-view></router-view>

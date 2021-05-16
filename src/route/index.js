@@ -13,7 +13,10 @@ const router = new VueRouter({
     },
     {
       path:'/edit/:id',
-      component:()=>import('../components/edit')
+      components:{
+        'default':()=>import('../components/edit'),
+        'create-category':()=>import('../components/create-category')
+      }
     }
   ]
 });

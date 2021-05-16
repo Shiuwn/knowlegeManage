@@ -11,7 +11,12 @@
           <i :class="item.class||'fa fa-code icon'"></i>
           <span>{{item.name}}</span>
         </el-menu-item>
-        
+        <el-menu-item v-if="isCreating">
+          <el-input @blur="blurHandler" placehold="请输入分类名称回车" clearable 
+            @keyup.enter.native="inputHandler"
+            v-model="newCategory"
+          ></el-input>
+        </el-menu-item>
     </el-menu>
 
   </el-col>
@@ -20,12 +25,33 @@
 
 <script>
 export default {
+  data(){
+    return {
+      newCategory:''
+    }
+  },
   created(){
     this.$store.dispatch('sidebar/FETCH_CATEGORY');
   },
   computed:{
     categorys(){
       return this.$store.state.sidebar.items
+    },
+    isCreating(){
+      return this.$store.state.sidebar.isCreating
+    }
+    
+  },
+  methods:{
+    blurHandler(){
+      this.$store.commit('sidebar/CREATE_CATEGORY',{isCreating:false})
+    },
+    inputHandler(){
+      // console.log(e)
+      if(this.newCategory){
+        this.$store.dispatch('sidebar/ADD_CATEGORY',{name:this.newCategory})
+
+      }
     }
   }
 }
