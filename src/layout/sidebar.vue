@@ -8,14 +8,20 @@
       text-color="rgb(69,137,148)"
       active-text-color="rgb(69,137,148)">
         <el-menu-item v-for="(item) in categorys" :key="item.id">
-          <i :class="item.class||'fa fa-code icon'"></i>
+          <i :class="(item.className||'fa fa-code')+' icon'"></i>
           <span>{{item.name}}</span>
         </el-menu-item>
         <el-menu-item v-if="isCreating">
-          <el-input @blur="blurHandler" placeholder="请输入分类名称回车" clearable 
-            @keyup.enter.native="inputHandler"
+          <el-input placeholder="请输入分类名称回车" clearable 
             v-model="newCategory"
           ></el-input>
+          <br>
+          <el-input placeholder="请输入类名回车" clearable 
+            v-model="className"
+          ></el-input>
+          <br>
+          <el-button type="primary" @click="confirm">确定</el-button>
+          <el-button type="default" @click="blurHandler">取消</el-button>
         </el-menu-item>
     </el-menu>
 
@@ -53,6 +59,10 @@ export default {
         this.$store.dispatch('sidebar/ADD_CATEGORY',{name:this.newCategory})
 
       }
+    },
+    confirm(){
+      this.blurHandler();
+      this.inputHandler();
     }
   }
 }
