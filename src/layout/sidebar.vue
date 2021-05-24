@@ -12,7 +12,7 @@
           <span>{{item.name}}</span>
         </el-menu-item>
         <el-menu-item v-if="isCreating">
-          <el-input @blur="blurHandler" placehold="请输入分类名称回车" clearable 
+          <el-input @blur="blurHandler" placeholder="请输入分类名称回车" clearable 
             @keyup.enter.native="inputHandler"
             v-model="newCategory"
           ></el-input>
@@ -27,7 +27,8 @@
 export default {
   data(){
     return {
-      newCategory:''
+      newCategory:'',
+      className:''
     }
   },
   created(){
